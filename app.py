@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, redirect
 # from flask_sqlalchemy import SQLAlchemy
 # from sqlalchemy import desc
-import txt2audio
+from txt2audio import NewBook
+import os
 
 
 app = Flask(__name__)
@@ -21,15 +22,21 @@ def post():
         content = request.form['content']
         name    = request.form['name']
 
-        book = txt2audio.NewBook(content=content, name=name)
+        book = NewBook(content=content, name=name)
 
-        return redirect('/file&name=<str:name>')
+        return redirect('/file&name={}'.format(name))
 
 
-@app.route('/file&name=<str>')
-def file():
+@app.route('/file&name=<string:name>')
+def file(name):
 
-    return render_template('done.html')
+    for file in os.listdir('audio-books/'):
+        if os.path.basename(file) == '{}.mp3'.format(name):
+
+            return render_template('done.html', file=file)
+
+
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug = True)
