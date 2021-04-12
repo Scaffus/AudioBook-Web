@@ -1,11 +1,17 @@
-{% extends base.html %}
+{% extends 'base.html' %}
 
 
 {% block head %}
 
-{% enblock %}
+{% endblock %}
 
 
 {% block body %}
 
-{% enblock %}
+<form action="/post" method="POST">
+    Content: <input type="text" name="content" id="content">
+    Name: <input type="text" name="name" id="name">
+    <input type="submit" id="submit" value="Convert">
+</form>
+
+{% endblock %}
