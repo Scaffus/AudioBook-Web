@@ -1,3 +1,3 @@
 # AudioBook Web
  
-<h2 style="font-style: italic;">Audi0Book but for the web</h2>
+<a href="https://github.com/Scaffus/AudioBook">Audi0Book</a> but for the web
