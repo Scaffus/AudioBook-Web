@@ -8,5 +8,5 @@ def NewBook(content, name):
     engine.setProperty('rate', 135)
     engine.setProperty('voice', book_voice)
 
-    engine.save_to_file(content, "audio-books/[Audio] {}".format(name))
+    engine.save_to_file(content, "audio-books/[Audio] {}.mp3".format(name))
     engine.runAndWait()
