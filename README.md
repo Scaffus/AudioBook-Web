@@ -17,6 +17,7 @@ I wanted to take it further and train my *existing?* flask skills.
 This projects was created using:
 * **Python** version: 3.7.8
 * **Flask** version: 1.1.2
+* **pyttsx3** version: 2.90
 * **Html** 5
 * **Css** 3
 
