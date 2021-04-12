@@ -12,10 +12,18 @@
     <div class="mb-3 bg-dark">
         <label for="contentFormInput" class="form-label text-light">Name of the file</label>
         <input type="text" class="form-control" name="name" id="contentFormInput" placeholder='Ex: mybook | Do not integrate \ / : * ? " < > |'>
-      </div>
-      <div class="mb-3 bg-dark">
+    </div>
+    <div class="mb-3 bg-dark">
         <label for="nameFormInput" class="form-label text-light">Write your text below</label>
         <textarea class="form-control" name="content" id="nameFormInput" style="height: 300px;" rows="3"></textarea>
+    </div>
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Voice</label>
+        <select class="form-select" name="voice" id="inputGroupSelect01">
+          <option selected>Choose...</option>
+          <option value="english">English</option>
+          <option value="french">French</option>
+        </select>
     </div>
     <div class="col-auto bg-dark">
         <button type="submit" class="btn btn-primary text-light">Convert</button>

@@ -20,6 +20,7 @@ def post():
 
         content = request.form['content']
         name    = request.form['name']
+        voice   = request.form['voice']
 
         # Checking if the user actually submitted something
         if name == ' ' or content == ' ' or name == '' or content == '':
@@ -27,23 +28,24 @@ def post():
             return redirect('/')
 
         else:
+
             # [NOT THE MOST EFFICIENT I KNOW LOL] Every time someone creates a new book it deletes all the existing ones (avoid a 10tb folder x) )
             for file in os.listdir('audio-books/'):
                 os.remove('audio-books/{}'.format(file))
 
-            book = NewBook(content=content, name=name)
+            NewBook(content=content, name=name, voice=voice)
 
             # Send the user to the page where he can download the file
-            return redirect('/file&name={}&text={}'.format(name, content))
+            return redirect('/file&name={}&voice={}&text={}'.format(name, voice, content))
 
 # Page where the user can download his file
-@app.route('/file&name=<string:name>&text=<string:text>')
-def file(name, text):
+@app.route('/file&name=<string:name>&voice=<string:voice>&text=<string:text>')
+def file(name, voice, text):
 
     for file in os.listdir('audio-books/'):
         if os.path.basename(file) == '{}.mp3'.format(name):
 
-            return render_template('done.html', file=file, text=text)
+            return render_template('done.html', file=file, text=text, voice=voice)
 
 
     return redirect('/')

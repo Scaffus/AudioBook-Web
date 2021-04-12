@@ -5,9 +5,15 @@ from pyttsx3 import init, voice
 
 # Get the content and the name and convert it to a audio file saved as "name".mp3
 
-def NewBook(content, name):
+def NewBook(content, name, voice):
+    print(voice)
 
-    book_voice = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0'
+    if voice == 'french':
+        book_voice = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_FR-FR_HORTENSE_11.0'
+    elif voice == 'english':
+        book_voice = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0'
+    else:
+        book_voice = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0'
 
     engine = init()
     engine.setProperty('rate', 135)
