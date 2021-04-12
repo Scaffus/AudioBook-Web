@@ -1,4 +1,9 @@
+# Made this function in a new file so the code can be cleaners
+
 from pyttsx3 import init, voice
+
+
+# Get the content and the name and convert it to a audio file saved as "name".mp3
 
 def NewBook(content, name):
 
