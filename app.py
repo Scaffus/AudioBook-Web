@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect
+from flask.helpers import send_file
 # from flask_sqlalchemy import SQLAlchemy
 # from sqlalchemy import desc
 from txt2audio import NewBook
@@ -13,6 +14,7 @@ app = Flask(__name__)
 def home():
 
     return render_template('index.html')
+
 
 @app.route('/post', methods=['GET', 'POST'])
 def post():
@@ -35,6 +37,24 @@ def file(name):
 
             return render_template('done.html', file=file)
 
+
+    return redirect('/')
+
+
+@app.route('/download/<filename>')
+def download_and_remove(filename):
+
+    path = 'audio-books/{}'.format(filename)
+
+    
+    return send_file(path, as_attachment=True) and redirect('/delete/{}'.format(filename))
+    
+
+@app.route('/delete/<filename>')
+def delete_file(filename):
+    
+    path = 'audio-books/{}'.format(filename)
+    os.remove(path)
 
     return redirect('/')
 
