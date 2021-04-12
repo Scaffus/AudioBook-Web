@@ -15,10 +15,10 @@ I wanted to take it further and train my *existing?* flask skills.
 ## Technologies
 
 This projects was created using:
-* Python version: 3.7.8
-* Flask version: 1.1.2
-* Html 5
-* Css 3
+* **Python** version: 3.7.8
+* **Flask** version: 1.1.2
+* **Html** 5
+* **Css** 3
 
 ## App
 
