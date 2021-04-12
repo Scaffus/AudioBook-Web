@@ -1,6 +1,6 @@
 ## AudioBook Web
  
-<a href="https://github.com/Scaffus/AudioBook">Audi0Book</a> but for the web
+<a href="https://github.com/Scaffus/AudioBook">Audi0Book</a> but for the web. *just a draft, not ready for production at all*
 
 ## Table of contents
 * [General info](#general-info)
