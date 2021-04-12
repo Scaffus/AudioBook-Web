@@ -8,10 +8,18 @@
 
 {% block body %}
 
-<form action="/post" method="POST">
-    Content: <input type="text" name="content" id="content">
-    Name: <input type="text" name="name" id="name">
-    <input type="submit" id="submit" value="Convert">
+<form action="/post" method="POST" class="bg-dark">
+    <div class="mb-3 bg-dark">
+        <label for="contentFormInput" class="form-label text-light">Name of the file</label>
+        <input type="text" class="form-control" name="name" id="contentFormInput" placeholder='Ex: mybook | Do not integrate \ / : * ? " < > |'>
+      </div>
+      <div class="mb-3 bg-dark">
+        <label for="nameFormInput" class="form-label text-light">Write your text below</label>
+        <textarea class="form-control" name="content" id="nameFormInput" style="height: 300px;" rows="3"></textarea>
+    </div>
+    <div class="col-auto bg-dark">
+        <button type="submit" class="btn btn-primary text-light">Convert</button>
+    </div>
 </form>
 
 {% endblock %}
